@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《命运》第三乐章 · Pilot (0–46s)</title>
+<style>
+  :root{--deep:#070512;--mid:#0E0A22;--vdim:#443E6B;--vlight:#6B5E9E;--ember:#E07840;--text:#CFC6E8;--sub:#8B80B5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{background:#000;font-family:"Songti SC","Noto Serif SC",serif;color:var(--text);overflow:hidden}
+  .stage{position:relative;width:100vw;height:100vh;background:#000;display:flex;align-items:center;justify-content:center}
+  svg{width:100%;height:100%;display:block}
+  .eyebrow{position:absolute;top:2.6%;left:3.2%;font-size:9px;letter-spacing:.3em;color:var(--sub);opacity:.6;font-family:"PingFang SC","Noto Sans SC",sans-serif;pointer-events:none}
+  #fsbtn{position:absolute;top:2.2%;right:2.6%;width:30px;height:30px;border:1px solid #443E6B;border-radius:6px;background:rgba(14,10,34,.5);cursor:pointer;z-index:6;display:flex;align-items:center;justify-content:center;opacity:.55}
+  #fsbtn:hover{opacity:1}#fsbtn svg{width:14px;height:14px}
+  #cap{position:absolute;bottom:8.5%;left:3.2%;font-size:clamp(12px,1.5vw,16px);letter-spacing:.2em;opacity:0;transition:opacity .8s;pointer-events:none}
+  #cap small{display:block;font-size:.62em;letter-spacing:.24em;color:var(--sub);margin-top:.4em;font-family:"PingFang SC","Noto Sans SC",sans-serif}
+  #endcard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:0;transition:opacity 1.6s;pointer-events:none;background:#000;z-index:4}
+  #endcard .t1{font-size:clamp(18px,2.6vw,26px);letter-spacing:.34em;color:var(--ember)}
+  #endcard .t2{font-size:10px;letter-spacing:.32em;color:var(--sub)}
+  #endcard .cr{position:absolute;bottom:4%;font-size:9px;letter-spacing:.1em;color:#5a527d;font-family:"PingFang SC","Noto Sans SC",sans-serif;text-align:center;line-height:1.9;padding:0 14px}
+  #overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(0,0,0,.82);cursor:pointer;transition:opacity .5s;z-index:5}
+  #overlay.hide{opacity:0;pointer-events:none}
+  #playbtn{width:76px;height:76px;border-radius:50%;border:1.5px solid var(--ember);display:flex;align-items:center;justify-content:center}
+  #playbtn svg{width:26px;height:26px;margin-left:4px}
+  #overlay .hint{font-size:11px;letter-spacing:.3em;color:var(--text);opacity:.85}
+  #overlay .cr{position:absolute;bottom:4%;font-size:9px;letter-spacing:.1em;color:#5a527d;font-family:"PingFang SC","Noto Sans SC",sans-serif;text-align:center;line-height:1.9;padding:0 14px}
+  .bar{position:absolute;left:3.2%;right:3.2%;bottom:4.2%;height:14px;pointer-events:none;opacity:.65}
+  .bar .track{position:absolute;left:0;right:0;top:6px;height:1.5px;background:#221d3a}
+  .bar .fill{position:absolute;left:0;top:6px;height:1.5px;background:var(--ember);width:0}
+  #pilotTag{position:absolute;top:2.6%;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;color:var(--ember);opacity:.75;font-family:"PingFang SC","Noto Sans SC",sans-serif;pointer-events:none;border:1px solid #443E6B;border-radius:20px;padding:3px 12px}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <svg id="scene" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="emberG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#F2B348" stop-opacity=".9"/><stop offset="55%" stop-color="#E07840" stop-opacity=".3"/><stop offset="100%" stop-color="#E07840" stop-opacity="0"/></radialGradient>
+      <radialGradient id="spiritG" cx="45%" cy="40%" r="60%"><stop offset="0%" stop-color="#8F7FD4"/><stop offset="60%" stop-color="#6B5E9E"/><stop offset="100%" stop-color="#443E6B"/></radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+      <filter id="soft6"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+
+    <rect x="-20" y="-20" width="1000" height="640" fill="#0B0818"/>
+    <g id="stars" fill="#CFC6E8" opacity=".4"></g>
+    <circle id="ember" cx="820" cy="120" r="70" fill="url(#emberG)" opacity=".22" filter="url(#soft6)"/>
+
+    <g id="seedGlow" opacity="0">
+      <circle r="5" fill="#8F7FD4" filter="url(#soft)"/>
+      <circle r="14" fill="none" stroke="#6B5E9E" stroke-width="1" opacity=".5"/>
+    </g>
+
+    <g id="spirit" opacity="0">
+      <ellipse class="body" cx="0" cy="0" rx="22" ry="20" fill="url(#spiritG)" filter="url(#soft)"/>
+      <path class="earL" d="M -14,-14 C -22,-30 -10,-32 -6,-18 Z" fill="#6B5E9E"/>
+      <path class="earR" d="M 14,-14 C 22,-30 10,-32 6,-18 Z" fill="#6B5E9E"/>
+    </g>
+    <g id="trailG" fill="#8F7FD4"></g>
+
+    <rect id="black" x="-20" y="-20" width="1000" height="640" fill="#000" opacity="1"/>
+  </svg>
+
+  <div class="eyebrow">《命运》 · 贝五第三乐章 · PILOT · by Ran D · music: Fulda / Schindler</div>
+  <div id="pilotTag">PILOT · 0:00–0:46 · 待反馈</div>
+  <div id="fsbtn" title="全屏"><svg viewBox="0 0 24 24" stroke="#CFC6E8" stroke-width="2" fill="none"><path d="M4 9 V4 H9 M15 4 H20 V9 M20 15 V20 H15 M9 20 H4 V15"/></svg></div>
+  <div id="cap"><span id="capMain"></span><small id="capSub"></small></div>
+  <div class="bar"><div class="track"></div><div class="fill" id="fill"></div></div>
+  <div id="endcard">
+    <div class="t1">第三乐章 Pilot · 完</div><div class="t2">等待然的反馈</div>
+    <div class="cr">概念 · 编排 · 剪辑：Ran D<br>Beethoven · Symphony No. 5 in C minor, Op. 67 · III. Scherzo. Allegro<br>Fulda Symphonic Orchestra · Simon Schindler · classicals.de · CC BY-SA 4.0</div>
+  </div>
+  <div id="overlay">
+    <div id="playbtn"><svg viewBox="0 0 24 24" fill="#E07840"><path d="M6 4 L20 12 L6 20 Z"/></svg></div>
+    <div class="hint">点击播放 · 第三乐章 Pilot 46 秒</div>
+    <div class="cr">概念 · 编排 · 剪辑：Ran D<br>Beethoven · Symphony No. 5, III. Scherzo. Allegro · Fulda Symphonic Orchestra / Simon Schindler · classicals.de · CC BY-SA 4.0</div>
+  </div>
+  <audio id="au" src="pilot-mvt3.mp3" preload="auto"></audio>
+</div>
+
+<script>
+const ENV3=[0,0,0,0,0,0,0,0,0,0,0,1,3,6,5,4,6,5,8,8,11,7,11,8,7,6,8,5,6,6,9,9,9,12,14,16,14,18,10,11,17,17,12,15,13,12,12,16,17,16,16,19,18,20,21,32,20,25,20,15,15,14,13,11,10,10,7,6,9,13,15,18,26,18,16,23,26,20,13,14,13,10,11,8,6,4,4,2,1,3,5,6,7,8,6,10,7,8,7,6,9,7,6,7,10,5,3,4,7,11,12,11,13,9,11,14,22,22,25,26,19,14,15,9,8,7,5,7,6,6,10,11,12,9,11,13,12,12,16,23,26,20,18,17,21,20,30,29,28,21,12,10,14,16,17,12,7,5,4,4,6,9,13,12,15,20,22,15,18,16,18,15,14,13,12,11,8,5,3,2,10,36,18,22,15,56,21,43,72,99,81,24,35,54,81,60,38,34,63,99,99,54,28,28,81,66,42,41,68,49,89,74,76,57,51,63,80,87,45,77,39,68,70,56,36,27,32,50,86,64,83,74,63,79,75,93,59,46,99,88,97,94,82,67,99,83,90,77,36,70,78,90,93,87,69,92,89,99,73,53,44,65,99,63,71,48,54,72,70,51,56,41,99,93,69,95,62,46,72,94,91,67,48,58,78,76,58,53,42,49,61,78,55,57,49,34,44,38,28,36,38,48,66,52,42,38,48,43,28,25,27,36,36,75,73,61,42,40,40,70,70,48,38,37,30,39,30,31,30,19,16,13,16,11,10,17,9,8,6,8,8,8,5,10,13,10,12,9,12,11,11,6,17,16,16,12,9,9,12,9,8,10,15,19,16,18,21,21,20];
+function env(t){const i=t*8;const a=Math.floor(i),b=Math.min(ENV3.length-1,a+1);const p=i-a;
+  return ((ENV3[Math.max(0,Math.min(ENV3.length-1,a))]*(1-p)+ENV3[b]*p)/99);}
+
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lerp=(a,b,p)=>a+(b-a)*clamp(p,0,1);
+function seg(t,a,b){if(b<=a)return t>=a?1:0;return clamp((t-a)/(b-a),0,1);}
+
+const au=$('au');
+{const g=$('stars');let s='';function R(i){const x=Math.sin(i*127.1)*43758.5453;return x-Math.floor(x);}
+ for(let i=0;i<24;i++){s+=`<circle cx="${40+R(i)*880}" cy="${30+R(i+50)*520}" r="${0.7+R(i+99)*0.8}"/>`}g.innerHTML=s;}
+
+const spirit=$('spirit'), seedGlow=$('seedGlow');
+const SEED_X=420, SEED_Y=380;
+
+{const g=$('trailG');let s='';for(let i=0;i<10;i++){s+=`<circle class="tr" r="2.4"/>`}g.innerHTML=s;}
+const trails=[...document.querySelectorAll('.tr')];
+
+const captions=[
+  [0,2,'黑场余响',''],
+  [2,24,'暗处有什么在动','种子发芽的声音，无人察觉'],
+  [24,25.2,'一声轻响',''],
+  [25.2,34,'小精灵滚了出来','暗物质所生，滑稽又笨拙'],
+  [34,41,'跌跌撞撞','四处乱撞，还没站稳'],
+  [41,46,'落地，晃了晃','环顾四周——这是哪里？'],
+];
+
+// hop trajectory: a sequence of parabolic bounces across the frame, timed to the loud jaunty theme (25-41s)
+const hops=[
+  {t0:25.2, t1:27.6, x0:SEED_X, x1:SEED_X+90, h:70},
+  {t0:27.6, t1:29.8, x0:SEED_X+90, x1:SEED_X+40, h:50},
+  {t0:29.8, t1:32.4, x0:SEED_X+40, x1:SEED_X+160, h:80},
+  {t0:32.4, t1:34.6, x0:SEED_X+160, x1:SEED_X+110, h:45},
+  {t0:34.6, t1:37.2, x0:SEED_X+110, x1:SEED_X+220, h:60},
+  {t0:37.2, t1:41,   x0:SEED_X+220, x1:SEED_X+200, h:35},
+];
+function hopPos(t){
+  for(const h of hops){
+    if(t>=h.t0 && t<=h.t1){
+      const p=(t-h.t0)/(h.t1-h.t0);
+      const x=lerp(h.x0,h.x1,p);
+      const arc=Math.sin(p*Math.PI)*h.h;
+      return {x, y: SEED_Y - arc, p, squash: 1-Math.sin(p*Math.PI)*0.35};
+    }
+  }
+  if(t>hops[hops.length-1].t1) return {x:hops[hops.length-1].x1, y:SEED_Y, p:1, squash:1};
+  return {x:SEED_X, y:SEED_Y, p:0, squash:1};
+}
+
+function update(t,dt){
+  const E=env(t);
+  $('black').setAttribute('opacity', 1-seg(t,0,1.5));
+  $('ember').setAttribute('opacity', .15+.12*Math.sin(t*0.4));
+
+  // seed glimmer, pulsing while dormant (0-24s), pops at 25s
+  const dormant=seg(t,1.5,3)*(1-seg(t,24,25.2));
+  const pulse=0.5+0.5*Math.sin(t*3.2);
+  seedGlow.setAttribute('opacity', dormant*(0.3+pulse*0.5+E*0.2));
+  seedGlow.setAttribute('transform', `translate(${SEED_X},${SEED_Y})`);
+
+  // spirit entrance + comedic hops
+  const born=seg(t,25.0,25.6);
+  spirit.setAttribute('opacity', born*(1-0)); // stays visible once born
+  const pos=hopPos(Math.max(t,25.2));
+  const settleX=lerp(pos.x, hops[hops.length-1].x1, seg(t,41,46));
+  const settleY=lerp(pos.y, SEED_Y, seg(t,41,46));
+  const wobble=Math.sin(t*9)*3*(1-seg(t,42,46));
+  spirit.setAttribute('transform', t<25?`translate(${SEED_X},${SEED_Y}) scale(0.05)`:
+    `translate(${settleX},${settleY}) rotate(${wobble}) scale(${1*pos.squash},${1*(2-pos.squash)})`);
+
+  // trail sparkles behind hops
+  trails.forEach((tr,i)=>{
+    const dtT=i*0.06;
+    const p=hopPos(Math.max(0,t-dtT));
+    const active=seg(t,25.2,26)*(1-seg(t,40,42));
+    tr.setAttribute('cx',p.x); tr.setAttribute('cy',p.y+8);
+    tr.setAttribute('opacity', active*(1-i/10)*0.6);
+  });
+
+  // caption
+  const c=captions.find(c=>t>=c[0]&&t<c[1]);
+  const cap=$('cap');
+  if(c){cap.style.opacity=1; $('capMain').textContent=c[2]; $('capSub').textContent=c[3];}
+  else cap.style.opacity=0;
+
+  $('fill').style.width=(clamp(t/46,0,1)*100)+'%';
+  if(t>=45.5){ $('endcard').style.opacity=1; }
+}
+
+let raf=null,lastT=-1;
+function loop(){
+  const t=au.currentTime;
+  if(t!==lastT){ update(t,0); lastT=t; }
+  if(!au.paused && !au.ended){ raf=requestAnimationFrame(loop); }
+}
+$('overlay').addEventListener('click',()=>{
+  au.play().then(()=>{
+    $('overlay').classList.add('hide');
+    const stage=$('stage');
+    if(stage.requestFullscreen) stage.requestFullscreen().catch(()=>{});
+    raf=requestAnimationFrame(loop);
+  }).catch(e=>console.error('play failed',e));
+});
+$('fsbtn').addEventListener('click',()=>{
+  const stage=$('stage');
+  if(document.fullscreenElement) document.exitFullscreen(); else stage.requestFullscreen().catch(()=>{});
+});
+au.addEventListener('ended',()=>{ update(46,0); });
+update(0,0);
+</script>
+</body>
+</html>
