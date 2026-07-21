@@ -29,6 +29,11 @@
        font-family:"PingFang SC","Noto Sans SC",sans-serif;border:1px solid var(--ember);border-radius:20px;
        padding:3px 9px}
   .tag.soon{color:var(--sub);border-color:#2A2440}
+  .card-wrap{position:relative}
+  .tag3d{position:absolute;top:40px;right:16px;font-size:9px;letter-spacing:.15em;color:var(--violet);
+       font-family:"PingFang SC","Noto Sans SC",sans-serif;border:1px solid var(--violet);border-radius:20px;
+       padding:3px 9px;text-decoration:none;z-index:2}
+  .tag3d:hover{color:var(--gold);border-color:var(--gold)}
   .extra{margin-top:56px;display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
   .extra a{font-size:12px;letter-spacing:.14em;color:var(--sub);text-decoration:none;
            font-family:"PingFang SC","Noto Sans SC",sans-serif;border-bottom:1px solid transparent}
@@ -44,12 +49,15 @@
   <p class="byline">概念 · 编排 · 剪辑 —— RAN D　·　music: Beethoven, Symphony No. 5, Op. 67</p>
 
   <div class="movements">
-    <a class="card" href="mvt1-full.html">
-      <span class="tag">完整版 · 7:20</span>
-      <div class="num">I. Allegro con brio</div>
-      <div class="name">命运叩门</div>
-      <div class="desc">黑暗宇宙中的孤独星球，与吞噬一切的黑洞、翻涌的乱流。一次次挣扎、跃出、被拽回——最终向内扎根，找到中心，也悄悄接住了一滴不该属于它的暗流。</div>
-    </a>
+    <div class="card-wrap">
+      <a class="card" href="mvt1-full.html">
+        <span class="tag">完整版 · 7:20</span>
+        <div class="num">I. Allegro con brio</div>
+        <div class="name">命运叩门</div>
+        <div class="desc">黑暗宇宙中的孤独星球，与吞噬一切的黑洞、翻涌的乱流。一次次挣扎、跃出、被拽回——最终向内扎根，找到中心，也悄悄接住了一滴不该属于它的暗流。</div>
+      </a>
+      <a class="tag3d" href="mvt1-3d.html">3D 版 →</a>
+    </div>
     <a class="card" href="mvt2-full.html">
       <span class="tag">完整版 · 9:52</span>
       <div class="num">II. Andante con moto</div>
